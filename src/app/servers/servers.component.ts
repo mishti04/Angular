@@ -15,7 +15,7 @@ import { Component, OnInit } from '@angular/core';
 export class ServersComponent implements OnInit {
   allowNewServer = false;
   serverCreationStatus = "no server";
-  serverName = "";
+  serverName = "Test server";
 
   constructor() {
     setTimeout(() => {
@@ -43,5 +43,7 @@ export class ServersComponent implements OnInit {
     //The console log is just for us. We dont need to log every time a keystroke is hit. This is just to be usd in  the dvelopment phase
     //console.log(event);
     this.serverName = (<HTMLInputElement>event.target).value;
+    //If this was 2 way data binding, setting the server name to something else would have also showed up inside th textbox.
+    this.serverName="Abrupt server name changed";
   }
 }

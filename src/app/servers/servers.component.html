@@ -1,6 +1,25 @@
-<p><b>$event</b> is a reserved keyword to give us access to event data. In this case the event is input i.e. keystroke.
+<p><b>$event</b> is a reserved keyword to give us access to event data.
+    In this case the event is input i.e. keystroke.
+    Becuase this is event binding and not 2 way data binding,
+    the initial value of the server mentoned in component file which is teset server
+    does not appear in the text box when we load the page.
+    implying its only taking data from browser on the keystroke event to server.
+    Not other way around.
 </p>
-<input type="text" class="from-control" (input)="onUpdateServerName($event)">
+
+
+<!-- Commenting event binding to use 2 way data binding
+    <input type="text" class="from-control" (input)="onUpdateServerName($event)"> -->
+
+<input type="text" class="from-control" [(ngModel)]="serverName">
+
+<!-- Below commented section is although lame but a good example of the extent of 2 way data binding
+    not only when the epage loads we can see the initial value of server name, the event binding part 
+    triggers the onUpdateServer method on keystroke, but there we tried to change the server name to 
+    Abrupt server name changed, that not only prints it below the textbox because we are printing the srevre name
+    it also updates the value inside the textbox. So technically whatever the user types is not visible anymore.
+    2 way data binding is the one responsible to change the value of the textbox when we are changing it from our component
+    <input type="text" class="from-control" [(ngModel)] = "serverName"  (input)="onUpdateServerName($event)"> -->
 <p>{{serverName}}</p>
 
 <button class="btn btn-primary" [disabled]="!allowNewServer">Add Server</button>

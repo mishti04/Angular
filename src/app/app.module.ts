@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+//NgModule is what is needed to use 2 way data binding
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 

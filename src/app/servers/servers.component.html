@@ -1,2 +1,11 @@
+<button class="btn btn-primary" [disabled]="!allowNewServer">Add Server</button>
 <app-server></app-server>
-<app-server></app-server>
+
+<!-- disabled is a html property which needs a value true or false
+We are providing it value from a variable. If the variable had a 
+static value this would be considered string interpolation but because 
+we are changing its value using setTimeout method, the browser now has 
+to get the updated value. For this we are using via 2 way data binding
+Where the function is constantly looking out for any updates to the variable.
+
+-->

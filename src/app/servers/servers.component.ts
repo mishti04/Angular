@@ -3,29 +3,45 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   // selecting by attribute
   //selector: '[app-servers]',
-   
+
   //selecting by class
   // selector: '.app-servers',
 
   //selecting by element
-   selector: 'app-servers',
+  selector: 'app-servers',
   templateUrl: './servers.component.html',
   styleUrls: ['./servers.component.css']
 })
 export class ServersComponent implements OnInit {
-allowNewServer = false;
-serverCreationStatus = "no server";
+  allowNewServer = false;
+  serverCreationStatus = "no server";
+  serverName = "";
 
   constructor() {
     setTimeout(() => {
       this.allowNewServer = true
     }, 2000);
-   }
+  }
 
   ngOnInit() {
   }
 
-  onCreateServer(){
+  onCreateServer() {
     this.serverCreationStatus = "server created";
+  }
+
+  //This is being fired with every keystroke. 
+  // onUpdateServerName(event:any){
+  //Logging so we can see what all properties does this event has
+  //   console.log(event);
+  //   this.serverName = event.target.value;
+  // }
+
+
+  /* The same method can be written both ways, th ebelow one is better as it has more strict type specification */
+  onUpdateServerName(event: Event) {
+    //The console log is just for us. We dont need to log every time a keystroke is hit. This is just to be usd in  the dvelopment phase
+    //console.log(event);
+    this.serverName = (<HTMLInputElement>event.target).value;
   }
 }

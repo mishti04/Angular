@@ -1,11 +1,22 @@
 <button class="btn btn-primary" [disabled]="!allowNewServer">Add Server</button>
+
 <app-server></app-server>
 
-<!-- disabled is a html property which needs a value true or false
-We are providing it value from a variable. If the variable had a 
-static value this would be considered string interpolation but because 
-we are changing its value using setTimeout method, the browser now has 
-to get the updated value. For this we are using via 2 way data binding
-Where the function is constantly looking out for any updates to the variable.
+<p>disabled is a html property which needs a value true or false
+    We are providing it value from a variable.
+    we are changing its value using setTimeout method, the browser now has
+    to get the updated value.
+</p>
+<p>
+    For that we are using property binding. this is not 2 way necessarily though.
+</p>
+<p>
+    If we only wanted to print the value of the property rather than using it to enable/disable something, we could have
+    also used string interpolation. In that case it wouldnt have made a difference
+</p>
+<p>
+    Below is the example to show just that
+</p>
 
--->
+<p>{{allowNewServer}} </p>
+<p [innerText]="allowNewServer"> </p>

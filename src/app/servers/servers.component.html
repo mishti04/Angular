@@ -8,7 +8,9 @@
     to get the updated value.
 </p>
 <p>
-    For that we are using property binding. this is not 2 way necessarily though.
+    <b>For that we are using property binding.</b> because this is only one way i.e we are only doing something based on
+    the
+    input we are getting from js, we cant consider this as 2 way data binding..
 </p>
 <p>
     If we only wanted to print the value of the property rather than using it to enable/disable something, we could have
@@ -20,3 +22,9 @@
 
 <p>{{allowNewServer}} </p>
 <p [innerText]="allowNewServer"> </p>
+
+<p><b>Below is example of event binding.</b></p>
+<p> parenthesis around click is angulars way of doing what htmk does with onClick. So
+    whenever you find parentehsis know its from event binding</p>
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
+<p>{{serverCreationStatus}}</p>

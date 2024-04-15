@@ -50,7 +50,15 @@ Hence we can directly use the logic here as its also a sigle statement and saves
 <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="addNewServer($event)">Add Server</button>
 <hr>
 <hr>
-<app-server *ngFor="let server of serverList"></app-server>
+
+<!--Alternative syntax of for
+This feature is available from angular 17
+The advantage of the new syntax is that it can be slightly more efficient under the hood and that it does not rely on NgFor or the CommonModule being imported / available.
+
+The track item.id part is required when using this new syntax - it ensures that Angular can efficiently track and re-render (if needed) the list items.-->
+@for (server of serverList; track $index) {
+    <app-server></app-server>
+}
 <hr>
 <hr>
 <p>disabled is a html property which needs a value true or false

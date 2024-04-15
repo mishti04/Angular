@@ -1,1 +1,3 @@
-<p>The Server Component</p>
+<!--ngStyle is the directive name which is an attribute directive and the square brackets around it indicates that we want to bind to some property on this directive
+Unlike structural directives, attribute directives dont add/remove elements. They only change the element they were placed on. These dont have an * in front of them-->
+<p [ngStyle]="{backgroundColor:getColor()}">The Server Component </p>

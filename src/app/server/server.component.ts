@@ -5,4 +5,12 @@ import { Component } from "@angular/core";
     templateUrl: "./server.component.html"
 })
 
-export class ServerComponent{}
+export class ServerComponent {
+  
+    getColor() {
+        if (Math.random() > 0.5)
+            return 'green';
+        else
+            return 'red';
+    }
+}

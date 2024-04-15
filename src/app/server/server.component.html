@@ -1,3 +1,6 @@
 <!--ngStyle is the directive name which is an attribute directive and the square brackets around it indicates that we want to bind to some property on this directive
-Unlike structural directives, attribute directives dont add/remove elements. They only change the element they were placed on. These dont have an * in front of them-->
-<p [ngStyle]="{backgroundColor:getColor()}">The Server Component </p>
+Unlike structural directives, attribute directives dont add/remove elements. They only change the element they were placed on. These dont have an * in front of them
+This needs a key value pair, key being which class to apply, value being when to apply that-->
+<p>In this scenario we want to set the color of the text white only if the status is set</p>
+<p [ngClass]="{statusSet: status!=='no status'}"
+[ngStyle]="{backgroundColor:getColor()}">The Server Component </p>

@@ -16,6 +16,7 @@ export class ServersComponent implements OnInit {
   allowNewServer = false;
   serverCreationStatus = "no server";
   serverName = "Test server";
+  username = "initial value";
 
   constructor() {
     setTimeout(() => {
@@ -46,4 +47,11 @@ export class ServersComponent implements OnInit {
     //If this was 2 way data binding, setting the server name to something else would have also showed up inside th textbox.
     this.serverName="Abrupt server name changed";
   }
+
+  //because this is a single stament, this could have directly put in the html file too
+  //as (click)="username = ''" --> 
+  resetTextbox(){
+    this.username = '';
+  }
+
 }

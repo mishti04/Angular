@@ -1,3 +1,21 @@
+<p>This is <b>assignment</b> to use all the types of bindings together. The goal here is to allow the user to input value that we print underneth and also give a button that lets us reset
+    the value.
+    This button is only enabled if the textbox has some value to wipe
+</p>
+<input type="text" [(ngModel)]="username">
+<!-- Technically we didnt necessarily had to put the comparision logic for disabled in th ehtml file
+We could have made a boolean variable and use that to decide to enable/disable the button
+Although nothing wrong with that, but would have made the process lengthy for us.
+we would then need to update this variable value based on the input entered.
+Fro that we would need to use event binding on keystroke and make yet another method
+to evaluate data in the textbox and accordingly update the boolean variable. 
+Hence we can directly use the logic here as its also a sigle statement and saves us a lot of work.
+-->
+<!-- Technically whatever we have put in resetTextBox also can be put in this html page as again its a single statement-->
+<button [disabled]="username === ''" (click)="resetTextbox()">resert User</button>
+<p>{{username}}</p>
+<hr>
+<hr>
 <p><b>$event</b> is a reserved keyword to give us access to event data.
     In this case the event is input i.e. keystroke.
     Becuase this is event binding and not 2 way data binding,
@@ -22,6 +40,8 @@
     <input type="text" class="from-control" [(ngModel)] = "serverName"  (input)="onUpdateServerName($event)"> -->
 <p>{{serverName}}</p>
 
+<hr>
+<hr>
 <button class="btn btn-primary" [disabled]="!allowNewServer">Add Server</button>
 
 <app-server></app-server>
@@ -47,6 +67,7 @@
 <p>{{allowNewServer}} </p>
 <p [innerText]="allowNewServer"> </p>
 
+<hr><hr>
 <p><b>Below is example of event binding.</b></p>
 <p> parenthesis around click is angulars way of doing what htmk does with onClick. So
     whenever you find parentehsis know its from event binding</p>

@@ -33,6 +33,11 @@ export class ServersComponent implements OnInit {
     this.serverCreated = true;
   }
 
+
+  addNewServer(event: Event){
+    this.serverName = (<HTMLInputElement>event.target).value;
+    this.serverCreated = true;
+  }
   //This is being fired with every keystroke. 
   // onUpdateServerName(event:any){
   //Logging so we can see what all properties does this event has

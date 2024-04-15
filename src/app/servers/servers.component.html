@@ -47,10 +47,10 @@ Hence we can directly use the logic here as its also a sigle statement and saves
     <p>No server was created</p>
 </ng-template>
 
-<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="addNewServer($event)">Add Server</button>
 <hr>
 <hr>
-<app-server></app-server>
+<app-server *ngFor="let server of serverList"></app-server>
 <hr>
 <hr>
 <p>disabled is a html property which needs a value true or false

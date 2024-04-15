@@ -18,6 +18,7 @@ export class ServersComponent implements OnInit {
   serverName = "Test server";
   username = "initial value";
   serverCreated = false;
+  serverList = ['server1', 'server2']
 
   constructor() {
     setTimeout(() => {
@@ -31,12 +32,13 @@ export class ServersComponent implements OnInit {
   onCreateServer() {
     this.serverCreationStatus = "server created";
     this.serverCreated = true;
+
   }
 
 
-  addNewServer(event: Event){
-    this.serverName = (<HTMLInputElement>event.target).value;
+  addNewServer(event: Event) {
     this.serverCreated = true;
+    this.serverList.push(this.serverName)
   }
   //This is being fired with every keystroke. 
   // onUpdateServerName(event:any){
@@ -52,12 +54,12 @@ export class ServersComponent implements OnInit {
     //console.log(event);
     this.serverName = (<HTMLInputElement>event.target).value;
     //If this was 2 way data binding, setting the server name to something else would have also showed up inside th textbox.
-    this.serverName="Abrupt server name changed";
+    this.serverName = "Abrupt server name changed";
   }
 
   //because this is a single stament, this could have directly put in the html file too
   //as (click)="username = ''" --> 
-  resetTextbox(){
+  resetTextbox() {
     this.username = '';
   }
 

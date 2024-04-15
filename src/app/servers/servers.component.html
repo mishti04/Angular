@@ -1,4 +1,5 @@
-<p>This is <b>assignment</b> to use all the types of bindings together. The goal here is to allow the user to input value that we print underneth and also give a button that lets us reset
+<p>This is <b>assignment</b> to use all the types of bindings together. The goal here is to allow the user to input
+    value that we print underneth and also give a button that lets us reset
     the value.
     This button is only enabled if the textbox has some value to wipe
 </p>
@@ -40,12 +41,13 @@ Hence we can directly use the logic here as its also a sigle statement and saves
     <input type="text" class="from-control" [(ngModel)] = "serverName"  (input)="onUpdateServerName($event)"> -->
 <p>{{serverName}}</p>
 
-<hr>
-<hr>
+
 <button class="btn btn-primary" [disabled]="!allowNewServer">Add Server</button>
-
+<hr>
+<hr>
 <app-server></app-server>
-
+<hr>
+<hr>
 <p>disabled is a html property which needs a value true or false
     We are providing it value from a variable.
     we are changing its value using setTimeout method, the browser now has
@@ -67,9 +69,15 @@ Hence we can directly use the logic here as its also a sigle statement and saves
 <p>{{allowNewServer}} </p>
 <p [innerText]="allowNewServer"> </p>
 
-<hr><hr>
+<hr>
+<hr>
 <p><b>Below is example of event binding.</b></p>
 <p> parenthesis around click is angulars way of doing what htmk does with onClick. So
     whenever you find parentehsis know its from event binding</p>
+<p>using <b>ngIf</b> we are instructing angular to only show the server creation status if a server has been created. Else that
+    line would not be jsut hidden but would not even exist in the dom</p>
+    <p>The * in front of ngIf implies that this parrective has the power to change the dom structure. Implyiong its a <b>structural directive</b></p>
 <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
-<p>{{serverCreationStatus}}</p>
+<p *ngIf="serverCreated">{{serverCreationStatus}}</p>
+
+<hr><hr>

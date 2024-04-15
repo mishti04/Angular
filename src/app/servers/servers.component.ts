@@ -17,6 +17,7 @@ export class ServersComponent implements OnInit {
   serverCreationStatus = "no server";
   serverName = "Test server";
   username = "initial value";
+  serverCreated = false;
 
   constructor() {
     setTimeout(() => {
@@ -29,6 +30,7 @@ export class ServersComponent implements OnInit {
 
   onCreateServer() {
     this.serverCreationStatus = "server created";
+    this.serverCreated = true;
   }
 
   //This is being fired with every keystroke. 

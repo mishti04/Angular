@@ -1,8 +1,12 @@
 <button (click)="incrementDisplay()">Display Details</button>
-<p *ngIf="display">
-@for (pwd of arr; track $index) {
-    <p [ngStyle] = "{backgroundColor:getColor(pwd)}" [ngClass] = "{whiteText : pwd>5}">Secret password </p>
-}
-</p>
+<p *ngIf="display">Secret password</p>
 
-<hr><hr>
+@for (pwd of arr; track $index;) {
+<div [ngStyle]="{backgroundColor:$index>=4 ? 'blue' : 'transparent'}" [ngClass]="{whiteText : $index>=4}"> {{pwd}}
+</div>
+}
+
+
+
+<hr>
+<hr>

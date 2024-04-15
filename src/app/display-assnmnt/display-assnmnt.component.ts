@@ -12,11 +12,7 @@ arr = [];
 
 incrementDisplay(){
 this.display=!this.display;
-this.arr.push(++this.count);
+this.arr.push(new Date());
 }
 
-getColor(pwd : string){
-  if((this.arr.findIndex(a=> a === pwd))>=5)
-    return "blue";
-}
 }
